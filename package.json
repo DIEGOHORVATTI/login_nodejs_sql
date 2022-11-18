@@ -1,0 +1,20 @@
+{
+  "name": "login_nodejs_sql",
+  "version": "1.0.0",
+  "main": "./controllers/server.js",
+  "repository": "https://github.com/DIEGOHORVATTI/login_nodejs_sql.git",
+  "author": "DIEGOHORVATTI <d.horvattid@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon --watch ./src ./controllers/server.js localhost 3000",
+    "sass:compile": "sass --color --style=compressed --watch src/scss:public/css --no-source-map --stop-on-error --quiet",
+    "dev": "yarn start & yarn sass:compile"  
+  },
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "boxen": "^2.0.0",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20",
+    "express-handlebars": "^5.3.3"
+  }
+}
