@@ -8,13 +8,14 @@
   "scripts": {
     "start": "nodemon --watch ./src ./controllers/server.js localhost 3000",
     "sass:compile": "sass --color --style=compressed --watch src/scss:public/css --no-source-map --stop-on-error --quiet",
-    "dev": "yarn start & yarn sass:compile"  
+    "dev": "yarn start & yarn sass:compile"
   },
   "dependencies": {
-    "chalk": "^3.0.0",
     "boxen": "^2.0.0",
+    "browser-sync": "^2.27.10",
+    "chalk": "^3.0.0",
     "express": "^4.18.2",
-    "nodemon": "^2.0.20",
-    "express-handlebars": "^5.3.3"
+    "express-handlebars": "^5.3.3",
+    "nodemon": "^2.0.20"
   }
 }

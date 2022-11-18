@@ -1,8 +1,9 @@
 console.clear();
-const express = require('express')
-const exphbs = require('express-handlebars')
 const chalk = require('chalk')
 const boxen = require("boxen")
+const express = require('express')
+const exphbs = require('express-handlebars')
+const browserSync = require("browser-sync").create();
 
 // const conn = require('../db/conn')
 // const User = require('../model/User')
@@ -22,21 +23,27 @@ app.use(
 )
 
 app.get('/', async (req, res) => {
-  res.render('home')
+  res.render('login')
 })
 
-/* ----- */
-app.listen(port, () => {
+/* -- abrir porta e ouvindo as modificações no browser-- */
+browserSync.init(
+  {
+    server: "../",
+    watch: true,
+    middleware: [app],
+    port: port,
+  },
   console.log(
-    boxen(`Aberto na porta ${chalk.red(port)}`, {
+    boxen(`Browsersync aberto na porta ${chalk.red(port)}`, {
       margin: 1,
       float: "center",
       padding: 1,
       borderStyle: "round",
       borderColor: "green",
     })
-  );
-});
+  )
+);
 
 /* ----- banco de dados*/
 // conn.sync().then(()=>{
